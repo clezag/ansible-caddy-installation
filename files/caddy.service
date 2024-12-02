@@ -32,5 +32,10 @@ PrivateTmp=true
 ProtectSystem=full
 AmbientCapabilities=CAP_NET_BIND_SERVICE
 
+# Auto restart in case of unexpected shutdown (e.g. when killed due to OOM-condition)
+RestartPreventExitStatus=1
+Restart=on-failure
+RestartSec=5s
+
 [Install]
 WantedBy=multi-user.target
